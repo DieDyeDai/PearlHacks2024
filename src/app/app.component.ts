@@ -6,5 +6,24 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'pearlhacks2024test';
+
+  public static Route = {
+    path: '',
+    title: 'Home',
+    component: AppComponent
+  };
+
+  title = 'Pearl_Hacks-2024';
+
+  // constructor(protected auth: AuthService) {}
 }
+/*
+<div *ngIf="auth.isAuthenticated$ | async">
+  User Profile Button Here
+  <button
+    mat-stroked-button
+    routerLink="/profile">
+    Profile
+  </button>
+</div>
+*/
