@@ -28,6 +28,7 @@ import { UserPrivateCardWidget } from './user-profile/user-private-card/user-pri
 
 import { AuthModule } from '@auth0/auth0-angular';
 import { FormsModule } from '@angular/forms';
+import { UserMapComponent } from './user-map/user-map.component';
 
 import { HttpClientModule } from '@angular/common/http';
 
@@ -38,7 +39,8 @@ import { HttpClientModule } from '@angular/common/http';
 
     AuthButtonWidget,
     UserCardWidget,
-    UserPrivateCardWidget
+    UserPrivateCardWidget,
+    UserMapComponent,
   ],
   imports: [
     HttpClientModule,
