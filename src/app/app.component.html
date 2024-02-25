@@ -2,7 +2,7 @@
   <button mat-icon-button aria-label="Menu icon" (click)="toggleMenu()">
     <mat-icon>menu</mat-icon>
   </button>
-  <h1>Visual Networking</h1>
+  <h1>Please Help Me Network!</h1>
 </mat-toolbar>
 <mat-sidenav-container autosize>
   <mat-sidenav [opened]="true" mode="side" [ngClass]="!isCollapsed ? 'expanded' : 'collapsed'">
@@ -13,6 +13,14 @@
           routerLink="../">
           <mat-icon>house</mat-icon>
           <span *ngIf="!isCollapsed">Home</span>
+        </button>
+      </a>
+      <a mat-list-item>
+        <button 
+            mat-stroked-button
+            routerLink="map">
+            <mat-icon>public</mat-icon>
+            <span *ngIf="!isCollapsed">Network!</span>
         </button>
       </a>
       <ng-container *ngIf="auth.isAuthenticated$ | async; else loggedOut">
@@ -43,14 +51,7 @@
         </button>
       </a>
       </ng-template>
-      <a mat-list-item>
-        <button 
-            mat-stroked-button
-            routerLink="map">
-            <mat-icon>public</mat-icon>
-            <span *ngIf="!isCollapsed">Network!</span>
-        </button>
-      </a>
+
 
     </mat-nav-list>
   </mat-sidenav>

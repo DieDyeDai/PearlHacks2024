@@ -84,6 +84,10 @@ export class CurrentUserService {
     .subscribe((value)=>{
       this.userListService.getUsers();
     });
+    this.http.post("/api/users/", this.user)
+    .subscribe((value)=>{
+      this.userListService.getUsers();
+    });
 
     return true;
   }
