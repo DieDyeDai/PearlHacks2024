@@ -18,7 +18,7 @@ export class AppComponent {
 
   title = 'Pearl_Hacks-2024';
 
-  // constructor(public auth: AuthService) {}
+  constructor(public auth: AuthService) {}
 }
 
 type PathMatch = "full" | "prefix" | undefined;

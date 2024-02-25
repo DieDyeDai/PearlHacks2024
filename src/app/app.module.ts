@@ -30,6 +30,8 @@ import { UserPrivateCardWidget } from './user-profile/user-private-card/user-pri
 import { FormsModule } from '@angular/forms';
 import { UserMapComponent } from './user-map/user-map.component';
 
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,6 +43,8 @@ import { UserMapComponent } from './user-map/user-map.component';
     UserMapComponent,
   ],
   imports: [
+    HttpClientModule,
+
     BrowserModule,
     AppRoutingModule,
 
