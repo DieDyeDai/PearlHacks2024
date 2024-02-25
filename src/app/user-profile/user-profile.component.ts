@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+// import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from '@auth0/auth0-angular';
 import { CurrentUserService, User } from '../current-user.service';
 
 @Component({
   selector: 'user-profile',
-  templateUrl: './user-profile.component.html'
+  templateUrl: './user-profile.component.html',
+  styleUrl: './user-profile.component.css'
 })
 export class UserProfileComponent {
 
@@ -20,15 +21,7 @@ export class UserProfileComponent {
   // constructor(protected auth: AuthService) {}
   constructor(
     protected auth: AuthService,
-    private router: Router,
-    private route: ActivatedRoute,
     protected currentUserService: CurrentUserService) {}
-
-  back() {
-    this.router.navigate([".."], {relativeTo: this.route})
-  }
-
-
 
 }
 

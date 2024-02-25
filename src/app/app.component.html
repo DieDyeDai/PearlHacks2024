@@ -1,18 +1,65 @@
-<div>
-  
-</div>
-
-<div>
-  <auth-widget />
-</div>
-<div *ngIf="auth.isAuthenticated$ | async">
-  <button
-    mat-stroked-button
-    routerLink="/profile">
-    Profile
+<mat-toolbar color="primary">
+  <button mat-icon-button aria-label="Menu icon" (click)="toggleMenu()">
+    <mat-icon>menu</mat-icon>
   </button>
-</div>
+  <h1>Visual Networking</h1>
+</mat-toolbar>
+<mat-sidenav-container autosize>
+  <mat-sidenav [opened]="true" mode="side" [ngClass]="!isCollapsed ? 'expanded' : 'collapsed'">
+    <mat-nav-list>
+      <a mat-list-item>
+        <button
+          mat-stroked-button
+          routerLink="../">
+          <mat-icon>house</mat-icon>
+          <span *ngIf="!isCollapsed">Home</span>
+        </button>
+      </a>
+      <ng-container *ngIf="auth.isAuthenticated$ | async; else loggedOut">
+        <a mat-list-item>
+        <button
+          mat-stroked-button
+          routerLink="/profile">
+          <mat-icon>person</mat-icon>
+          <span *ngIf="!isCollapsed">Profile</span>
+        </button>
+      </a>
+      <a mat-list-item>
+        <button 
+            mat-stroked-button
+            (click)="logout()">
+            <mat-icon>logout</mat-icon>
+            <span *ngIf="!isCollapsed">Log out</span>
+        </button>
+      </a>
+      </ng-container>
+      <ng-template #loggedOut>
+        <a mat-list-item>
+        <button
+        mat-stroked-button
+        (click)="login()">
+          <mat-icon>login</mat-icon>
+          <span *ngIf="!isCollapsed">Log in</span>
+        </button>
+      </a>
+      </ng-template>
+      <a mat-list-item>
+        <button 
+            mat-stroked-button
+            routerLink="map">
+            <mat-icon>public</mat-icon>
+            <span *ngIf="!isCollapsed">Network!</span>
+        </button>
+      </a>
 
-<app-user-map />
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <h2></h2>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+<!-- <app-user-map /> -->
 
 <router-outlet />

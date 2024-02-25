@@ -9,6 +9,22 @@ import { Subscription } from 'rxjs';
   styleUrl: './user-map.component.css'
 })
 export class UserMapComponent implements OnInit, OnDestroy {
+
+  public static Route = {
+    path: 'map',
+    title: 'Network!',
+    component: UserMapComponent
+  }
+
+  static positions: number[][] = [
+    [0, 0],
+    [200, 200],
+    [-200, 200],
+    [-200, -200],
+    [200, -200]
+  ]
+  private posIndex = 0;
+
   private profilesSubscription: Subscription = new Subscription();
 
   constructor(private userListService: UserListService) {}

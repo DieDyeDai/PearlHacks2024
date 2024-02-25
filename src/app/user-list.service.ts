@@ -12,35 +12,38 @@ export class UserListService {
   static dummyUsers: User[] = [
     // dummy users lol
     {
-      name: "user1",
+      name: "John",
       bio: "user1 bio",
-      interests: ["Aaaaa", "Bbbbb"],
+      interests: ["Chemistry", "Data Science"],
       email: "1@gmail.com",
-      password: "things",
+      password: "pass",
       gender: 0,
     },
 
     {
-      name: "user2",
+      name: "Emily",
       bio: "user2 bio",
-      interests: ["Ccccc", "Ddddd"],
+      interests: ["Mathematics", "Physics"],
       email: "2@gmail.com",
-      password: "things",
+      password: "pass",
       gender: 1,
     },
 
     {
-      name: "user3",
+      name: "Sam",
       bio: "user3 bio",
-      interests: ["Eeeee", "Fffff"],
+      interests: ["Web Development", "UI/UX"],
       email: "3@gmail.com",
-      password: "things",
+      password: "pass",
       gender: 2,
     }
 
   ];
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+    this.users.next([]);
+    // Guarantee that the next value from users$ (the exposed observable) is not null.
+  }
 
   private profiles: User[] = UserListService.dummyUsers;
 
@@ -87,7 +90,7 @@ export class UserListService {
     // when this method is called, the returned observable should be subscribed to to then call get_users to update 
   }
 
-
+  
 
 
 }

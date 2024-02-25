@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 
 /* Material UI Dependencies */
 import { MatButtonModule } from '@angular/material/button';
@@ -16,7 +17,9 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatSelectModule } from '@angular/material/select';
 
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -25,6 +28,7 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { AuthButtonWidget } from './login-widget/login-widget';
 import { UserCardWidget } from './user-profile/user-card/user-card.widget';
 import { UserPrivateCardWidget } from './user-profile/user-private-card/user-private-card.widget';
+import { UserFormComponent } from './user-profile/user-form/user-form.component';
 
 import { AuthModule } from '@auth0/auth0-angular';
 import { FormsModule } from '@angular/forms';
@@ -41,12 +45,16 @@ import { HttpClientModule } from '@angular/common/http';
     UserCardWidget,
     UserPrivateCardWidget,
     UserMapComponent,
+    UserFormComponent,
   ],
   imports: [
     HttpClientModule,
 
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
+
+    ReactiveFormsModule,
 
     // Material UI
     MatButtonModule,
@@ -63,6 +71,7 @@ import { HttpClientModule } from '@angular/common/http';
     MatTabsModule,
     MatToolbarModule,
     MatCheckboxModule,
+    MatSelectModule,
     FormsModule,
 
     // auth0 configuration

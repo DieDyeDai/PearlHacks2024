@@ -1,9 +1,41 @@
 from fastapi import HTTPException
 from ..models.user import User
-
+from pydantic import BaseModel
 
 _user_id = 1
-_users: dict[str, User] = {}
+_u1: User = User.model_validate({
+    "name": "user1",
+    "bio": "user1 bio",
+    "interests": ["Chemistry", "Data Science"],
+    "email": "1@gmail.com",
+    "password": "pass",
+    "gender": 0,
+    })
+_u2: User = User.model_validate({
+    "name": "user2",
+    "bio": "user2 bio",
+    "interests": ["Chemistry", "Data Science"],
+    "email": "2@gmail.com",
+    "password": "pass",
+    "gender": 1,
+})
+_u3: User = User.model_validate({
+    "name": "user3",
+    "bio": "user3 bio",
+    "interests": ["Mathematics", "Physics"],
+    "email": "3@gmail.com",
+    "password": "pass",
+    "gender": 2,
+    })
+
+_users: dict[str, User] = {
+    "1@gmail.com": _u1,
+
+    "2@gmail.com": _u2,
+
+    "3@gmail.com": _u3
+
+}
 
 class UserService:
 

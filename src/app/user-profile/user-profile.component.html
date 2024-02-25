@@ -1,17 +1,18 @@
-<div *ngIf="auth.isAuthenticated$ | async" >
-    My Profile
-    <ul *ngIf="auth.user$ | async as user">
-        <li>{{ user.email }}</li>
-    </ul>
-    <user-private-card 
-    [user]="user"
-    />
-</div>
+<div class="userProfile">
 
-<div>
-    <button
-    mat-stroked-button
-    (click)="back()">
-        Home
-    </button>
+    <div *ngIf="auth.isAuthenticated$ | async" >
+        My Profile
+        <user-private-card 
+        [user]="user"
+        />
+    </div>
+
+    <div>
+        <button
+            mat-stroked-button
+            routerLink="/profile/edit">
+            Edit Profile
+        </button>
+    </div>
+
 </div>

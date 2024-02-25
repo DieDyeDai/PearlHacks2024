@@ -41,7 +41,9 @@ mat-card {
     border-radius: 6px;
     border-style: solid;
     border-width: 1px;
-    width: fit-content;
+    width: 100%;
+    box-sizing: border-box;
+    float: left;
 }
 
 .bio-label-overlap{
@@ -55,7 +57,7 @@ mat-card {
 
 .interests-label-overlap{
     position: relative;
-    top: -40px;
+    top: 0px;
     left: 30px;
     background-color: white;
     padding-left: 0.1rem;
