@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { UserMapComponent } from './user-map/user-map.component';
-//import { AuthService } from '@auth0/auth0-angular';
+import { AuthService } from '@auth0/auth0-angular';
 
 @Component({
   selector: 'app-root',

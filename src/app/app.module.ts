@@ -22,11 +22,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 
-//import { AuthButtonWidget } from './login-widget/login-widget';
+import { AuthButtonWidget } from './login-widget/login-widget';
 import { UserCardWidget } from './user-profile/user-card/user-card.widget';
 import { UserPrivateCardWidget } from './user-profile/user-private-card/user-private-card.widget';
 
-//import { AuthModule } from '@auth0/auth0-angular';
+import { AuthModule } from '@auth0/auth0-angular';
 import { FormsModule } from '@angular/forms';
 import { UserMapComponent } from './user-map/user-map.component';
 
@@ -37,7 +37,7 @@ import { HttpClientModule } from '@angular/common/http';
     AppComponent,
     UserProfileComponent,
 
-    //AuthButtonWidget,
+    AuthButtonWidget,
     UserCardWidget,
     UserPrivateCardWidget,
     UserMapComponent,
@@ -66,13 +66,13 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
 
     // auth0 configuration
-    /*AuthModule.forRoot({
+    AuthModule.forRoot({
       domain: 'dev-y0qb0t1o6xvr4py2.us.auth0.com',
       clientId: '29IPxG2KZa9O5XiinNKm65VgFWUnXlJ7',
       authorizationParams: {
         redirect_uri: window.location.origin
       }
-    })*/
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
