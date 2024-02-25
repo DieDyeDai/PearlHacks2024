@@ -12,8 +12,8 @@ export class CurrentUserService {
   constructor(private http: HttpClient) {
     this.user = {
       name: 'a',
-      bio: 'a',
-      interests: ['a', 'b'],
+      bio: 'aaaaaaaaa aaaaaaaaaaaaaaaaaaa aaaaaaaaaaa aaaaaaaaaaaaaaaaaaaaaaa aaaaa aa aaaa aaaaaaaaaaaaaa aaaaaaaaaa',
+      interests: ['aaaaaaaaaaaaaaa', 'bbbbbbbbbbbbbb'],
       gender: GENDER.MALE,
       email: 'a@gmail.com',
       password: 'a'
