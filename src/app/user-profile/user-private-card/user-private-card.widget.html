@@ -1,24 +1,36 @@
 <mat-card class="card" appearance="outlined">
-    <div>
+    <div class="left-container">
     <mat-card-header>
-            <mat-card-title>
+            <mat-card-title class="name">
                 {{ user.name }}
             </mat-card-title>
         </mat-card-header>
     </div>
     <div>
-        <mat-label>Bio</mat-label>
-        <mat-card-content>
+        <div>
+            <mat-label class="bio-label-overlap">Bio</mat-label>
+        </div>
+        <div>
+            <mat-card-content class="outline">
             <p>
                 {{ user.bio }}
             </p>
         </mat-card-content>
+        </div>
+
     </div>
     <div>
-        <mat-label>Interests</mat-label>
-        <mat-card-content
-            *ngFor="let interest of user.interests">
-            {{ interest }}
+
+    </div>
+    <div class="left-container">
+        <mat-label class="interests-label-overlap">Interests</mat-label>
+        <mat-card-content class="outline">
+
+            <mat-list>
+                <mat-list-item *ngFor="let interest of user.interests">
+                    {{ interest }}
+                </mat-list-item>
+            </mat-list>
         </mat-card-content>
     </div>
     <div>

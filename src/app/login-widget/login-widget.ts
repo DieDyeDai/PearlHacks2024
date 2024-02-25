@@ -4,19 +4,7 @@ import { DOCUMENT } from '@angular/common';
 
 @Component({
   selector: 'auth-widget',
-  //templateUrl: './login.widget.html',
-  
-  template: `
-    <ng-container *ngIf="auth.isAuthenticated$ | async; else loggedOut">
-      <button (click)="logout()">
-        Log out
-      </button>
-    </ng-container>
-
-    <ng-template #loggedOut>
-      <button (click)="login()">Log in</button>
-    </ng-template>
-  `,
+  templateUrl: './login-widget.html',
   
   styles: [],
 })
