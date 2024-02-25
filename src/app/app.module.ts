@@ -28,6 +28,7 @@ import { UserPrivateCardWidget } from './user-profile/user-private-card/user-pri
 
 //import { AuthModule } from '@auth0/auth0-angular';
 import { FormsModule } from '@angular/forms';
+import { UserMapComponent } from './user-map/user-map.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { FormsModule } from '@angular/forms';
 
     //AuthButtonWidget,
     UserCardWidget,
-    UserPrivateCardWidget
+    UserPrivateCardWidget,
+    UserMapComponent,
   ],
   imports: [
     BrowserModule,

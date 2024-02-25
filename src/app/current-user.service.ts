@@ -1,3 +1,7 @@
+/* This services allows for
+  -identifying the current user
+  -storing and updating the information of the current user.
+*/
 import { Injectable } from '@angular/core';
 
 @Injectable({
