@@ -2,10 +2,10 @@ from pydantic import BaseModel
 from enum import Enum
 
 class Gender(Enum):
-    MALE = 'Male'
-    FEMALE = 'Female'
-    NONBINARY = 'Nonbinary'
-    OTHER = 'Other'
+    MALE = 0
+    FEMALE = 1
+    NONBINARY = 2
+    OTHER = 3
 
 class User(BaseModel):
     name: str
