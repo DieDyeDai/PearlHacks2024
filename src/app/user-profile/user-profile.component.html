@@ -1,0 +1,19 @@
+<div>
+    User profile page
+    <ul>
+        <li>{{ user.name }}</li>
+        <li>{{ user.email }}</li>
+    </ul>
+</div>
+
+<user-private-card 
+    [user]="user"
+    />
+
+<div>
+    <button
+    mat-stroked-button
+    (click)="back()">
+        Home
+    </button>
+</div>

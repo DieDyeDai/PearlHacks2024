@@ -1,0 +1,32 @@
+<mat-card class="card" appearance="outlined">
+    <div>
+    <mat-card-header>
+            <mat-card-title>
+                {{ user.name }}
+            </mat-card-title>
+        </mat-card-header>
+    </div>
+    <div>
+        <mat-label>Bio</mat-label>
+        <mat-card-content>
+            <p>
+                {{ user.bio }}
+            </p>
+        </mat-card-content>
+    </div>
+    <div>
+        <mat-label>Interests</mat-label>
+        <mat-card-content
+            *ngFor="let interest of user.interests">
+            {{ interest }}
+        </mat-card-content>
+    </div>
+    <div>
+        <mat-card-content>
+            <mat-label>Email</mat-label>
+            {{ user.email }}
+        </mat-card-content>
+    </div>
+</mat-card>
+
+
