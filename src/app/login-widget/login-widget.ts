@@ -5,8 +5,7 @@ import { DOCUMENT } from '@angular/common';
 @Component({
   selector: 'auth-widget',
   templateUrl: './login-widget.html',
-  
-  styles: [],
+  styleUrl: './login-widget.css',
 })
 export class AuthButtonWidget {
     constructor(
