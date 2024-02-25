@@ -19,6 +19,7 @@ export class UserProfileComponent {
   
   // constructor(protected auth: AuthService) {}
   constructor(
+    protected auth: AuthService,
     private router: Router,
     private route: ActivatedRoute,
     protected currentUserService: CurrentUserService) {}
@@ -26,6 +27,8 @@ export class UserProfileComponent {
   back() {
     this.router.navigate([".."], {relativeTo: this.route})
   }
+
+
 
 }
 

@@ -29,6 +29,8 @@ import { UserPrivateCardWidget } from './user-profile/user-private-card/user-pri
 import { AuthModule } from '@auth0/auth0-angular';
 import { FormsModule } from '@angular/forms';
 
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,6 +41,8 @@ import { FormsModule } from '@angular/forms';
     UserPrivateCardWidget
   ],
   imports: [
+    HttpClientModule,
+
     BrowserModule,
     AppRoutingModule,
 
