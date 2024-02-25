@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthService } from '@auth0/auth0-angular';
 
 @Component({
   selector: 'app-root',
@@ -8,15 +9,19 @@ import { Component } from '@angular/core';
 export class AppComponent {
 
   public static Route = {
-    path: '',
+    path: 'home',
     title: 'Home',
-    component: AppComponent
+    component: AppComponent,
+    pathMatch: "full" as PathMatch
   };
 
   title = 'Pearl_Hacks-2024';
 
-  // constructor(protected auth: AuthService) {}
+  // constructor(public auth: AuthService) {}
 }
+
+type PathMatch = "full" | "prefix" | undefined;
+
 /*
 <div *ngIf="auth.isAuthenticated$ | async">
   User Profile Button Here
