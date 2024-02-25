@@ -18,7 +18,7 @@ export class UserMapComponent implements OnInit, OnDestroy {
       this.updateVisualization();
     });
 
-    const profiles = this.userListService.getUserProfiles();
+    const profiles = this.userListService.getUsers();
     const svg = d3.select('#visualization').style('position', 'relative');
 
     // Example of adding a new dot for each profile
@@ -41,7 +41,7 @@ export class UserMapComponent implements OnInit, OnDestroy {
   }
 
   updateVisualization() {
-    const profiles = this.userListService.getUserProfiles();
+    const profiles = this.userListService.getUsers();
     const svg = d3.select('#visualization').style('position', 'relative');
 
     // Example of adding a new dot for each profile

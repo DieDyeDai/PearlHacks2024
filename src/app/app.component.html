@@ -5,8 +5,7 @@
 <div>
   <auth-widget />
 </div>
-<div>
-  User Profile Button Here
+<div *ngIf="auth.isAuthenticated$ | async">
   <button
     mat-stroked-button
     routerLink="/profile">
