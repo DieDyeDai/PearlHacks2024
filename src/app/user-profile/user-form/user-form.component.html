@@ -1,0 +1,67 @@
+<div class="page-container">
+    <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title> Edit Profile </mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="form-input">
+          <mat-form-field
+            appearance="outline"
+            color="accent">
+            <mat-label for="name"> Name: </mat-label>
+            <input
+              matInput
+              placeholder=""
+              id="name"
+              type="text"
+              formControlName="name"
+              maxlength="30" />
+          </mat-form-field>
+  
+          <mat-form-field
+            hintLabel="Max 200 characters"
+            appearance="outline"
+            color="accent">
+            <mat-label for="description"> Description: </mat-label>
+            <input
+              matInput
+              placeholder="Enter description here."
+              id="bio"
+              type="text"
+              formControlName="bio"
+              maxlength="200" />
+          </mat-form-field>
+  
+          <mat-form-field 
+            hintLabel="Type some interests here! e.g. Web Development, UI/UX, ..."
+            appearance="outline" 
+            color="accent">
+            <mat-label for="workLength"> Interests </mat-label>
+            <input
+              matInput
+              id="interests"
+              type="text"
+              formControlName="interests"
+              required />
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>Gender</mat-label>
+            <mat-select [(ngModel)]="selectedGender" [(value)]="selectedGender" name="gender" formControlName="gender">
+                @for (gender of genders; track gender) {
+                    <mat-option [value]="gender.value">{{ gender.viewValue }}</mat-option>
+                }
+            </mat-select>
+          </mat-form-field>
+        </mat-card-content>
+      </mat-card>
+      <mat-card-actions>
+        <button mat-stroked-button type="submit" [disabled]="!userForm.valid">
+          Submit
+        </button>
+        <button mat-stroked-button routerLink="/profile">
+          Cancel
+        </button>
+      </mat-card-actions>
+    </form>
+  </div>
